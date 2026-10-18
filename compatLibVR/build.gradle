@@ -1,0 +1,12 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    namespace "app.lawnchair.compatlib.eleven"
+    addFrameworkJar('framework-11.jar')
+}
+
+dependencies {
+    implementation projects.compatLib
+}
