@@ -10,6 +10,11 @@ plugins {
     id "com.gradle.enterprise" version "3.15.1"
 }
 
+// Fixed project name: the directory name may contain dots (e.g.
+// "lawnchair-12.1-legacy"), which breaks Gradle's type-safe project
+// accessors. Pin a valid name so the build works from any folder.
+rootProject.name = "lawnchair"
+
 gradleEnterprise {
     buildScan {
         termsOfServiceUrl = "https://gradle.com/terms-of-service"
